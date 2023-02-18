@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fresh Cuts</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Your own additional style sheet -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<div class = "entirelogo" > 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class = "mylogo" > 
+                    <img class="img-responsive" src="logo.png" width="250" height: auto; >
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class = "logotext" > 
+                    <p>Welcome to Fresh Cuts</p>
+                    <div class = "slogan" >
+                    <p>Your favorite barber! </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class = "ourstaff"> 
+    <div class="container-fluid">
+        <div class = "row" >
+                <div class="col-sm-12" >
+                Our Available Services
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<div class = "row" >
+    <div class="col-lg-12">
+        <table class="table table-hover" >
+            <thead>
+            <tr>
+                <th>Available Services</th>
+                <th>Price (CAD$)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Men's Cut</td>
+                <td>24.99$</td>
+            </tr>
+            <tr>
+                <td>Men's Cut + Beard Trim</td>
+                <td>29.99$</td>
+            </tr>
+            <tr>
+                <td>Woman's Cut</td>
+                <td>44.99$</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class = "ourstaff"> 
+    <div class="container-fluid">
+        <div class = "row" >
+                <div class="col-sm-12" >
+                Our Amazing Staff
+                </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container p-3">
+    <div class="card-columns">
+        
+        <div class = "card1" > 
+            <div class="card bg-dark" style="width:200px; height: auto;">
+                <img class="card-img-top" src="Jules.jpeg" alt="Card image" style="width:198px" height="130px">
+                <div class="card-body">
+                    <h4 class="card-title">Jules</h4>
+                    <p class="card-text">Male barber</p>
+                    <!-- collapsible part -->
+                    <a href="#card1" class="btn btn-info" data-toggle="collapse" >See Profile</a>
+                    <div id="card1" class="collapse card1">
+                        <p>Jules has been cutting hair for 15 years . He is very good at cutting mens hair </p>
+                        <br>
+                        His specialties include fades, beard trims and styling.
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class = "card2" > 
+            <div class="card bg-dark" style="width:200px; height: auto;">
+                <img class="card-img-top" src="Sam.png" alt="Card image" style="width:199px" height="130px">
+                <div class="card-body">
+                    <h4 class="card-title">Sam</h4>
+                    <p class="card-text">Female barber</p>
+                    <!-- collapsible part -->
+                    <a href="#card2" class="btn btn-info" data-toggle="collapse">See Profile</a>
+                    <div id="card2" class="collapse card2">
+                        <p>Sam has been cutting hair for 10 years. She is very talented at cuttings mens and womans hair.</p>
+                        <br>
+                        She is a jack of all trades and can fufill any requests. She will even give personal recommendations. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class = "ourstaff"> 
+    <div class="container-fluid">
+        <div class = "row" >
+            <div class="col-sm-12" >
+                Available Hair Dye Colours!
+            </div>
+        </div>
+    </div>
+</div>
+<img class="haircolours" src="1719038.jpg" style="width:340px" height="308px">
+<p class = "haircolours">
+    <small>
+        For more details please contact us!
+    </small>
+</p>
+
+<br>    
+    
+    
+<div class = "ourstaff"> 
+    <div class="container-fluid">
+        <div class = "row" >
+                <div class="col-sm-12" >
+                    Are you ready to book a appointment?
+                </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- <p class = "appointment"> <b>Tell us a bit about you so we can arrange the best service for you!</b></p> -->
+
+<form name="frm">
+    <div class = "form-group">
+        <!-- <label for= "emailAddress">Email address</label> -->
+        <p class = "appointment">Email Address</p>
+        <input type = "email" class = "form-control" name="emailAddress" id = "emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+        <p class = "smallinfo">
+            <small>
+                So we can notify you about the details of appointment!
+            </small>
+        </p>
+    </div>
+
+    <div class="form-group">
+        <p class = "appointment">Phone Number</p>
+        <!-- <label for="phoneNumber">Your phone Number</label> -->
+        <textarea class="form-control" id="phoneNumber" name="phoneNumber" rows="1" placeholder="Enter phone number"></textarea>
+    </div>
+
+    <div class ="form-group">
+        <p class = "appointment">Select Your Appointment Date and time</p>
+        <!-- <label for="dateTimeInput" class="col-2 col-form-label">Select your appointment Date and time</label> -->
+        <input class="form-control" type="datetime-local" name="dateTimeInput" id="dateTimeInput">
+    </div>
+    
+    <p class = "appointment">Select the Services you want!</p><br>
+    <div class="form-check">
+        <!-- <p3>what types of services do you want?</p3> -->
+        <input type="checkbox" class="form-check-input" id="serviceCheck1">
+        <label class="form-check-label" for="serviceCheck1">Men's Cut</label><br>
+        <input type="checkbox" class="form-check-input" id="serviceCheck2">
+        <label class="form-check-label" for="serviceCheck2">Men's Cut + Beard Trim</label><br>
+        <input type="checkbox" class="form-check-input" id="serviceCheck3">
+        <label class="form-check-label" for="serviceCheck3">Women's Cut</label><br>
+    </div>
+    <br>
+
+    <div class="form-group">
+        <label class="appointment" for="additionalInfo"><b>Any comments or suggestions before your haircuts that want to let us know?</b></label>
+        <textarea class="form-control" id="additionalInfo" rows="3"></textarea>
+    </div>
+
+    <button type = "submit" class = "btn btn-primary" onclick="return IsEmpty();">Submit</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</form>
+
+<div class = "contactinfo" >
+    <div class="col-lg-12">
+        <p class = "text-contactus"> <b>Contact us</b>
+        <br>
+        <b>Salon Address:</b> 201 Wellington Ave, ON, Canada
+        <br>
+        <b>Phone:</b> 613-928-1024</p>
+    </div>
+</div>
+
+<script>
+    function IsEmpty() {
+        if (document.forms['frm'].emailAddress.value === "") {
+            alert("Email address is empty");
+            return false;
+        }
+        if (document.forms['frm'].phoneNumber.value === "") {
+            alert("Phone number is empty");
+            return false;
+        }
+        if (document.forms['frm'].dateTimeInput.value === "") {
+            alert("Date and Time is empty");
+            return false;
+        }
+        return true;
+    }
+</script>
