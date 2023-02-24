@@ -35,15 +35,26 @@
         </div>
     </div>
 </div>
-<div class = "ourstaff"> 
-    <div class="container-fluid">
-        <div class = "row" >
-                <div class="col-sm-12" >
-                Our Available Services
-                </div>
+
+<ul class="breadcrumb">
+    <li><a href="#">Our Services</a></li>
+    <li><a href="#navstaff">Our Amazing Staff</a></li>
+    <li><a href="#navcolors">Hair Dye Colours</a></li>
+    <li><a href="#navappointment">Book an appointment</a></li>
+    <li><a href="#navpayment">Payment Information</a></li>
+  </ul>
+
+<div class = "navservices" id = "navservices"> 
+    <div class = "ourstaff"> 
+        <div class="container-fluid">
+            <div class = "row" >
+                    <div class="col-sm-12" >
+                    Our Available Services
+                    </div>
+            </div>
         </div>
     </div>
-</div>
+
 
 
 <div class = "row" >
@@ -73,12 +84,14 @@
     </div>
 </div>
 
-<div class = "ourstaff"> 
-    <div class="container-fluid">
-        <div class = "row" >
-                <div class="col-sm-12" >
-                Our Amazing Staff
-                </div>
+<div class = "navstaff" id = "navstaff"> 
+    <div class = "ourstaff"> 
+        <div class="container-fluid">
+            <div class = "row" >
+                    <div class="col-sm-12" >
+                    Our Amazing Staff
+                    </div>
+            </div>
         </div>
     </div>
 </div>
@@ -86,7 +99,6 @@
 
 <div class="container p-3">
     <div class="card-columns">
-        
         <div class = "card1" > 
             <div class="card bg-dark" style="width:200px; height: auto;">
                 <img class="card-img-top" src="Jules.jpeg" alt="Card image" style="width:198px" height="130px">
@@ -122,7 +134,7 @@
     </div>
 </div>
 
-<div class = "ourstaff"> 
+<div class = "ourstaff" id = "navcolors" > 
     <div class="container-fluid">
         <div class = "row" >
             <div class="col-sm-12" >
@@ -141,11 +153,11 @@
 <br>    
     
     
-<div class = "ourstaff"> 
+<div class = "ourstaff" id = "navappointment"> 
     <div class="container-fluid">
         <div class = "row" >
                 <div class="col-sm-12" >
-                    Are you ready to book a appointment?
+                    Book an appointment
                 </div>
         </div>
     </div>
@@ -187,22 +199,113 @@
         <input type="checkbox" class="form-check-input" id="serviceCheck3">
         <label class="form-check-label" for="serviceCheck3">Women's Cut</label><br>
     </div>
+
+    <br>
+
+    <div class ="form-group">
+        <div class = "barbers" > 
+        <label for="barbers" class="form-label">Choose your barber from the list:</label>
+            <input class="form-control" list="barbers" name="barber" id="barber">
+                <datalist id="barbers">
+                <option value="Jules">
+                <option value="Sam">
+                </datalist>
+        </div>
+    </div>
+
     <br>
 
     <div class="form-group">
-        <label class="appointment" for="additionalInfo"><b>Any comments or suggestions before your haircuts that want to let us know?</b></label>
+        <label class="appointment" for="additionalInfo">Any special requests for your haircut that we should know?</label>
         <textarea class="form-control" id="additionalInfo" rows="3"></textarea>
     </div>
 
-    <button type = "submit" class = "btn btn-primary" onclick="return IsEmpty();">Submit</button>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
 </form>
+
+<div class = "ourstaff" id="navpayment"> 
+    <div class="container-fluid">
+        <div class = "row" >
+                <div class="col-sm-12" >
+                    Payment Information
+                </div>
+        </div>
+    </div>
+</div>
+
+<br>
+
+
+<div class = "payment-info"> 
+    <div class="row2">
+        <div class="col-75">
+        <div class="container2">
+            <form action="/action_page.php">
+            <div class="row">
+                <div class="col-50">
+                <h3>Billing Address</h3>
+                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Homer Simpson">
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                <input type="text" id="email" name="email" placeholder="homersimpson@example.com">
+                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                <input type="text" id="adr" name="address" placeholder="254 Springfield Dr">
+                <label for="city"><i class="fa fa-institution"></i> City</label>
+                <input type="text" id="city" name="city" placeholder="Springfield">
+    
+                <div class="row">
+                    <div class="col-50">
+                    <label for="province">State</label>
+                    <input type="text" id="province" name="province" placeholder="Ontario">
+                    </div>
+                    <div class="col-50">
+                    <label for="postalcode">Zip</label>
+                    <input type="text" id="postalcode" name="postalcode" placeholder="K2A 8B1">
+                    </div>
+                </div>
+                </div>
+    
+                <div class="col-50">
+                <h3>Payment</h3>
+                <label for="fname">Accepted Cards</label>
+                <div class="icon-container">
+                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+                <label for="cname">Name on Card</label>
+                <input type="text" id="cname" name="cardname" placeholder="Marge Simpson">
+                <label for="ccnum">Credit card number</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+    
+                <div class="row">
+                    <div class="col-50">
+                    <label for="expyear">Exp Year</label>
+                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                    </div>
+                    <div class="col-50">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                    </div>
+                </div>
+                </div>
+    
+            </div>
+            <label>
+                <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+            </label>
+            <input type="submit" value="Confirm & Book appointment" class="btn1" onclick="return IsEmpty();">
+            </form>
+        </div>
+        </div>
+    
+    </div>
+</div>
+
 
 <div class = "contactinfo" >
     <div class="col-lg-12">
