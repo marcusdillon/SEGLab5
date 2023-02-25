@@ -50,6 +50,7 @@
             <div class = "row" >
                     <div class="col-sm-12" >
                     Our Available Services
+                    <img src="service_icon.png" alt="Services Icon Image">
                     </div>
             </div>
         </div>
@@ -90,6 +91,7 @@
             <div class = "row" >
                     <div class="col-sm-12" >
                     Our Amazing Staff
+                    <img src="staff_icon.png" alt="Staff Icon Image">
                     </div>
             </div>
         </div>
@@ -158,6 +160,7 @@
         <div class = "row" >
                 <div class="col-sm-12" >
                     Book an appointment
+                    <img src="appointment_icon.png" alt="Appointment Icon Image">
                 </div>
         </div>
     </div>
@@ -180,7 +183,7 @@
     <div class="form-group">
         <p class = "appointment">Phone Number</p>
         <!-- <label for="phoneNumber">Your phone Number</label> -->
-        <textarea class="form-control" id="phoneNumber" name="phoneNumber" rows="1" placeholder="Enter phone number"></textarea>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="Enter phone number" maxlength="10" required>
     </div>
 
     <div class ="form-group">
@@ -229,6 +232,7 @@
         <div class = "row" >
                 <div class="col-sm-12" >
                     Payment Information
+                    <img src="payment_icon.png" alt="Payment Icon Image">
                 </div>
         </div>
     </div>
@@ -257,11 +261,26 @@
                 <div class="row">
                     <div class="col-50">
                     <label for="province">State</label>
-                    <input type="text" id="province" name="province" placeholder="Ontario">
+                    <input type="text" id="province" name="province" list="provinces">
+                    <datalist id="provinces">
+                        <option value="Alberta">
+                        <option value="British Columbia">
+                        <option value="Manitoba">
+                        <option value="New Brunswick">
+                        <option value="Newfoundland and Labrador">
+                        <option value="Northwest Territories">
+                        <option value="Nova Scotia">
+                        <option value="Nunavut">
+                        <option value="Ontario">
+                        <option value="Prince Edward Island">
+                        <option value="Quebec">
+                        <option value="Saskatchewan">
+                        <option value="Yukon">
+                    </datalist>
                     </div>
                     <div class="col-50">
                     <label for="postalcode">Zip</label>
-                    <input type="text" id="postalcode" name="postalcode" placeholder="K2A 8B1">
+                    <input type="text" id="postalcode" name="postalcode" placeholder="K2A 8B1" maxlength="7">
                     </div>
                 </div>
                 </div>
@@ -278,18 +297,37 @@
                 <label for="cname">Name on Card</label>
                 <input type="text" id="cname" name="cardname" placeholder="Marge Simpson">
                 <label for="ccnum">Credit card number</label>
-                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                <input type="text" id="cardnumber" name="cardnumber" pattern="^\d{4} \d{4} \d{4} \d{4}$" maxlength="19" placeholder="1111-2222-3333-4444" required>
                 <label for="expmonth">Exp Month</label>
-                <input type="text" id="expmonth" name="expmonth" placeholder="September">
-    
+                <input type="text" id="expmonth" name="expmonth" list="expmonths" placeholder="September">
+                    <datalist id="expmonths">
+                        <option value="January">
+                        <option value="February">
+                        <option value="March">
+                        <option value="April">
+                        <option value="May">
+                        <option value="June">
+                        <option value="July">
+                        <option value="August">
+                        <option value="September">
+                        <option value="October">
+                        <option value="November">
+                        <option value="December">
+                    </datalist>
+                
+                <br>
                 <div class="row">
+                    <br>
+                    <br>
                     <div class="col-50">
                     <label for="expyear">Exp Year</label>
-                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                    <input type="number" id="expyear" name="expyear" placeholder="2018" min="1000" max="9999" pattern="[0-9]{4}">
                     </div>
+                    <br>
+                    <br>
                     <div class="col-50">
                     <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                    <input type="number" id="cvv" name="cvv" placeholder="352" min="100" max="999" pattern="\d{3}">
                     </div>
                 </div>
                 </div>
@@ -333,4 +371,81 @@
         }
         return true;
     }
+
+    const creditCardInput = document.getElementById("cardnumber");
+
+    creditCardInput.addEventListener("input", () => {
+        const value = creditCardInput.value.replace(/\D/g, "");
+        const formattedValue = value.replace(/(\d{4})/g, "$1 ").trim();
+        creditCardInput.value = formattedValue;
+    });
+
+    const myInput = document.getElementById("phoneNumber");
+
+    myInput.addEventListener("input", () => {
+        myInput.value = myInput.value.replace(/[^0-9]/g, "");
+    });
+
+    const provinceInput = document.getElementById("province");
+
+    provinceInput.addEventListener("input", () => {
+        const options = Array.from(provinceInput.list.options).map(o => o.value);
+        if (!options.includes(provinceInput.value)) {
+            provinceInput.value = "";
+        }
+    });
+
+    const monthInput = document.getElementById("month");
+
+    monthInput.addEventListener("input", () => {
+        const options = Array.from(monthInput.list.options).map(o => o.value);
+        if (!options.includes(monthInput.value)) {
+            monthInput.value = "";
+        }
+    });
+
+    const postalCodeInput = document.getElementById("postalcode");
+
+    postalCodeInput.addEventListener("input", () => {
+        let input = postalCodeInput.value.toUpperCase();
+        input = input.replace(/[^0-9A-Z]/g, "");
+        input = input.substring(0, 6);
+        input = input.replace(/(\w{3})(\w{1,3})?/, "$1 $2").trim();
+        postalCodeInput.value = input;
+    });
+
+    const yearInput = document.getElementById("expyear");
+
+    yearInput.value = new Date().getFullYear();
+
+    yearInput.addEventListener("input", () => {
+        const input = yearInput.value;
+        const numericInput = input.replace(/\D/g, "");
+        const truncatedInput = numericInput.substring(0, 4);
+        yearInput.value = truncatedInput;
+    });
+
+    yearInput.addEventListener("change", () => {
+        const inputYear = parseInt(yearInput.value, 10);
+        const currentYear = new Date().getFullYear();
+        if (inputYear < currentYear) {
+            yearInput.value = currentYear;
+        }
+    });
+
+    const cvvInput = document.getElementById("cvv");
+
+    cvvInput.addEventListener("input", () => {
+        const input = cvvInput.value;
+        const numericInput = input.replace(/\D/g, "");
+        const truncatedInput = numericInput.substring(0, 3);
+        cvvInput.value = truncatedInput;
+    });
+
+    cvvInput.addEventListener("change", () => {
+        if (cvvInput.value.length < 3) {
+            cvvInput.value = "000";
+        }
+    });
+
 </script>
