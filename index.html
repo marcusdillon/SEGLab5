@@ -186,11 +186,7 @@
         <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" placeholder="Enter phone number" maxlength="10" required>
     </div>
 
-    <div class ="form-group">
-        <p class = "appointment">Select Your Appointment Date and time</p>
-        <!-- <label for="dateTimeInput" class="col-2 col-form-label">Select your appointment Date and time</label> -->
-        <input class="form-control" type="datetime-local" name="dateTimeInput" id="dateTimeInput">
-    </div>
+    
     
     <p class = "appointment">Select the Services you want!</p><br>
     <div class="form-check">
@@ -215,6 +211,13 @@
                 </datalist>
         </div>
     </div>
+	
+<div class ="form-group">
+        <p class = "appointment">Select Your Appointment Date and time</p>
+        <!-- <label for="dateTimeInput" class="col-2 col-form-label">Select your appointment Date and time</label> -->
+        <input class="form-control" type="datetime-local" name="dateTimeInputJules" id="dateTimeInputJules" min="2023-02-06T09:00" max="2023-02-08T19:00">
+		<input class="form-control" type="datetime-local" name="dateTimeInputSam" id="dateTimeInputSam" min="2023-02-08T09:00" max="2023-02-10T19:00">
+</div>
 
     <br>
 
@@ -242,6 +245,7 @@
 
 
 <div class = "payment-info"> 
+<span class="tooltiptext">In case of last-minute cancellation!</span>
     <div class="row2">
         <div class="col-75">
         <div class="container2">
